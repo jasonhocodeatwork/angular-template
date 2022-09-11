@@ -3,4 +3,12 @@
 
 
 single server Id: {{serverId}}
-single server status: {{getServerStatus()}}
+
+<p [ngStyle]="{backgroundColor: getColor()}"
+
+    [ngClass]="{online: status === 'online'}"
+
+> 
+
+    single server status: {{getServerStatus()}}
+</p>

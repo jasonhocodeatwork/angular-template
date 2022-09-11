@@ -1,9 +1,19 @@
 
 
 <p>SERVER: {{servername}}</p>
-<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<input type="text" 
+    class="form-control" 
+    (input)="onUpdateServerName($event)"
+    >
 
+    <p>SERVER: {{servername2}}</p>
+    <input type="text" 
+        class="form-control" 
+        [(ngModel)]="servername2"
+        >
 
+<p *ngIf="create; else noserver"> ngif directive: created </p>
+<ng-template #noserver></ng-template>
 <button class="btn btn-primary" 
     [disabled]="!allowNewServer" 
     [innerText]="'test'" 
@@ -13,5 +23,4 @@
 <!-- <p>checking: {{allowNewServer}}</p> -->
 <p>{{serverCreationStatus}}</p>
 
-<app-server></app-server><br>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server><br>
