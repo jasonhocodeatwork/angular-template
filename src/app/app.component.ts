@@ -23,4 +23,8 @@ export class AppComponent {
       content: blueData.serverContent
     });
   }
+
+  ondestroy() {
+    this.serverElements.splice(0,1)
+  }
 }
