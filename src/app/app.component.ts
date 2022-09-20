@@ -39,4 +39,21 @@ export class AppComponent {
       'list-group-item-danger': server.status === 'critical'
     };
   }
+
+  filteredstatus = '';
+
+  onaddserver() {
+    this.servers.push({
+      instanceType: 'small',
+      name: 'new Server',
+      status: 'stable',
+      started: new Date(15, 1, 2017)     
+    })
+  }
+
+  appstatus = new Promise((resolve,reject)=> {
+    setTimeout(() => {
+      resolve('stable')
+    }, 2000);
+  })
 }
